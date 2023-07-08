@@ -1,0 +1,42 @@
+
+@rootApi = http://localhost:8000
+@userApi = {{rootApi}}/api/v1/user
+@burrowApi = {{rootApi}}/api/v1/burrow
+
+
+### server testing
+GET  {{rootApi}}
+
+# ======== user api
+### Get user
+GET {{userApi}}
+
+### crate  user in db
+POST {{userApi}}
+Content-Type: application/json
+
+{
+    "role": "admin",
+    "fName": "Same",
+    "lName": "Smith",
+    "phone": "09876",
+    "address": "Somewhere in Sydney",
+    "email": "sam@esmail",
+    "password": "12345Mn$6"
+}
+
+# ============ Book api 
+
+# ======== burrow api
+### create new burrow record
+POST  {{burrowApi}}
+Content-Type: application/json
+
+{
+    "bookId": "skjfo9844",
+    "BookName": "prem acharya",
+    "thumbnail": "http://...",
+    "userId": "asljflj02840",
+    "userName": "how to code",
+    "returnDate": "2023-12-12"
+}
